@@ -1,7 +1,14 @@
-# IoT_Botnet
+## IoT_Botnet
 Project for AI in Cybersecurity Course
 
-## Project Repo Structure
+## Setup Environment
+```setup
+To install project dependencies, run the following command:
+make setup
+```
+
+## Structure
+```text
 IoT_Botnet/
 ├── Makefile
 ├── requirements.txt
@@ -9,3 +16,4 @@ IoT_Botnet/
 ├── src/
 ├── data/
 └── models/
+```
