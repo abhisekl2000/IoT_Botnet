@@ -11,7 +11,7 @@ import pandas as pd
 from sklearn.model_selection import GroupShuffleSplit
 
 DROP_FEATURES = ['mqtt.msg', 'mqtt.msgid'] # payload memorization / sequence identifier
-HEX_FEATURES = ['tcp.flags', 'mgtt.hdrflags']
+HEX_FEATURES = ['tcp.flags', 'mqtt.hdrflags']
 
 def parse_hex(value):
     if pd.isna(value):
@@ -57,7 +57,7 @@ def main():
     # THe same group never occurs on both sides of the holdout.
     groups = pd.util.hash_pandas_object(X, index=False)
     ambiguity = df.groupby(groups, sort=False)['target'].nunique()
-    ambigious_keys = ambiguity.udex[ambiguity > 1]
+    ambigious_keys = ambiguity.index[ambiguity > 1]
     ambigious_mask = groups.isin(ambigious_keys)
     print('Rows with conflicting labels for identical input features:', int(ambigious_mask.sum()))
     X = X.loc[~ambigious_mask].reset_index(drop=True)
@@ -75,7 +75,7 @@ def main():
 
     # fit missing-value replacements only on the training data
     medians = train.median(numeric_only=True).fillna(0)
-    tain = train.fillna(medians).fillna(0)
+    train = train.fillna(medians).fillna(0)
     test = test.fillna(medians).fillna(0)
     train['label'] = labels.iloc[train_idx].to_numpy()
     test['label'] = labels.iloc[test_idx].to_numpy()
@@ -99,7 +99,7 @@ def main():
         'train_labels': {str(k): int(v) for k, v in train['label'].value_counts().items()},
         'test_labels': {str(k): int(v) for k, v in test['label'].value_counts().items()},
     }
-    (args.outptut_dir / 'preprocessing_metadata.json').write_text(json.dumps(metadata, indent=2))
+    (args.output_dir / 'preprocessing_metadata.json').write_text(json.dumps(metadata, indent=2))
     print('Saved to', args.output_dir)
     print('Train labels:', metadata['train_labels'], 'Test labels:', metadata['test_labels'])
     print('Features:', len(X.columns), 'Constant removed:', len(constant_cols))
