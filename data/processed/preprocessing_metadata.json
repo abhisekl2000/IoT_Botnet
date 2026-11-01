@@ -1,0 +1,81 @@
+{
+  "source": "data/raw/mqttdataset_reduced.csv",
+  "random_seed": 42,
+  "split_method": "GroupShuffleSplit on identical retained raw feature vectors",
+  "limitation": "Not a session/device-independet split; temporal correlation may remain.",
+  "target_mapping": {
+    "legitimate": 0,
+    "all_other_classes": 1
+  },
+  "dropped_features": [
+    "mqtt.msg",
+    "mqtt.msgid"
+  ],
+  "constant_columns": [
+    "mqtt.conack.flags.reserved",
+    "mqtt.conack.flags.sp",
+    "mqtt.conflag.qos",
+    "mqtt.conflag.reserved",
+    "mqtt.conflag.retain",
+    "mqtt.conflag.willflag",
+    "mqtt.sub.qos",
+    "mqtt.suback.qos",
+    "mqtt.willmsg",
+    "mqtt.willmsg_len",
+    "mqtt.willtopic",
+    "mqtt.willtopic_len"
+  ],
+  "features": [
+    "tcp.flags",
+    "tcp.time_delta",
+    "tcp.len",
+    "mqtt.conack.flags",
+    "mqtt.conack.val",
+    "mqtt.conflag.cleansess",
+    "mqtt.conflag.passwd",
+    "mqtt.conflag.uname",
+    "mqtt.conflags",
+    "mqtt.dupflag",
+    "mqtt.hdrflags",
+    "mqtt.kalive",
+    "mqtt.len",
+    "mqtt.msgtype",
+    "mqtt.proto_len",
+    "mqtt.protoname",
+    "mqtt.qos",
+    "mqtt.retain",
+    "mqtt.ver"
+  ],
+  "training_medians": {
+    "tcp.flags": 24.0,
+    "tcp.time_delta": 9.2e-05,
+    "tcp.len": 13.0,
+    "mqtt.conack.flags": 0.0,
+    "mqtt.conack.val": 0.0,
+    "mqtt.conflag.cleansess": 0.0,
+    "mqtt.conflag.passwd": 0.0,
+    "mqtt.conflag.uname": 0.0,
+    "mqtt.conflags": 0.0,
+    "mqtt.dupflag": 0.0,
+    "mqtt.hdrflags": 48.0,
+    "mqtt.kalive": 0.0,
+    "mqtt.len": 11.0,
+    "mqtt.msgtype": 3.0,
+    "mqtt.proto_len": 0.0,
+    "mqtt.protoname": 0.0,
+    "mqtt.qos": 0.0,
+    "mqtt.retain": 0.0,
+    "mqtt.ver": 0.0
+  },
+  "ambigious_rows_removed": 115538,
+  "train_rows": 163660,
+  "test_rows": 51728,
+  "train_labels": {
+    "1": 83681,
+    "0": 79979
+  },
+  "test_labels": {
+    "1": 26812,
+    "0": 24916
+  }
+}

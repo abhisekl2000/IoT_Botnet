@@ -1,0 +1,7 @@
+target,nonconflicting_rows,conflicting_rows,total_rows,conflict_pct
+bruteforce,5791,8710,14501,60.06
+dos,93512,36711,130223,28.19
+flood,307,306,613,49.92
+legitimate,104895,60568,165463,36.61
+malformed,6145,4779,10924,43.75
+slowite,4829,4373,9202,47.52

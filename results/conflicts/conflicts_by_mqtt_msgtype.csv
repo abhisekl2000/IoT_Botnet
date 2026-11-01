@@ -1,0 +1,4 @@
+mqtt.msgtype,bruteforce,dos,flood,legitimate,malformed,slowite
+0.0,8708,36710,305,60568,4727,4306
+1.0,2,0,0,0,4,0
+2.0,0,1,1,0,48,67

@@ -1,0 +1,10 @@
+Total rows: 330,926
+Unique retained-feature groups: 119,076
+Conflicting groups: 1,335
+Rows in conflicting groups: 115,447 (34.89%)
+Conflicting groups contatining both legitimate and attack labels: 52
+
+IMPORTANT: Identical model inputs with different labels are ambigious at this feature granularity.
+This is not proof of ground-truth labels. Do not delete these rows automatically.
+Hash values are group identifiers, not interpretable features. Grouping is by the exact
+post-conversion input representation used by preprocess_mqttset.pyThis audit does not establish caputre-session independence.
