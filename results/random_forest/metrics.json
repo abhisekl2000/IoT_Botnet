@@ -1,0 +1,14 @@
+{
+  "train_rows": 163660,
+  "test_rows": 51728,
+  "features": 19,
+  "trees": 100,
+  "accuracy": 0.9998840086606867,
+  "attack_precision": 0.9998881098015814,
+  "attack_recall": 0.9998881098015814,
+  "attack_f1": 0.9998881098015814,
+  "true_negative": 24913,
+  "false_positive": 3,
+  "false_negative": 3,
+  "true_positive": 26809
+}
