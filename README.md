@@ -32,11 +32,38 @@ python src/train_model.py \--train data/processed/train_binary.csv \--test data/
 
 ## Structure
 ```text
-IoT_Botnet/
-├── Makefile
-├── requirements.txt
-├── README.md
-├── src/
-├── data/
-└── models/
+IoT_Botnet
+    ├── data
+    │   ├── processed
+    │   │   ├── preprocessing_metadata.json
+    │   │   ├── test_binary.csv
+    │   │   └── train_binary.csv
+    │   └── raw
+    │       └── mqttdataset_reduced.csv
+    ├── Makefile
+    ├── models
+    ├── README.md
+    ├── requirements.txt
+    ├── results
+    │   ├── conflicts
+    │   │   ├── conflicts_by_class.csv
+    │   │   ├── conflicts_by_mqtt_msgtype.csv
+    │   │   ├── summary.txt
+    │   │   └── top_100_conflicting_groups.csv
+    │   └── random_forest
+    │       ├── classification_report.txt
+    │       ├── confusion_matrix.csv
+    │       ├── confusion_matrix.png
+    │       ├── feature_importance.csv
+    │       ├── metrics.json
+    │       └── random_forest.joblib
+    └── src
+        ├── iot_device.py
+        ├── preprocess_mqttset.py
+        ├── __pycache__
+        │   └── iot_device.cpython-314.pyc
+        ├── report_conflicts.py
+        ├── simulation.py
+        └── train_model.py
+
 ```
