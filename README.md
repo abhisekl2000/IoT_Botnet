@@ -25,6 +25,11 @@ preprocess_mqttset.py: cleans and prepares the dataset for AI training. Use the 
 python src.preprocess_mqttset.py \--input data/raw/mqttdataset_reduced.csv \--output-dir data/processed
 ```
 
+## Train a Random Forest model to distinguish legitimate MQTT traffic from attack traffic
+```train model
+python src/train_model.py \--train data/processed/train_binary.csv \--test data/processed/test_binary.csv \--outputdir results/random_forest
+```
+
 ## Structure
 ```text
 IoT_Botnet/
