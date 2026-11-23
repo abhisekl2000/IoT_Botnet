@@ -1,0 +1,2 @@
+run_id,evaluated_packets,true_negative,false_positive,false_negative,true_positive,accuracy,precision,recall,f1_score,false_positive_rate
+test_004,329,0,99,0,230,0.6990881458966566,0.6990881458966566,1.0,0.8228980322003577,1.0

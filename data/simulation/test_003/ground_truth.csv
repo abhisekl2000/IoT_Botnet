@@ -1,0 +1,5 @@
+run_id,device_id,timestamp,state
+test_003,thermostat_01,1795375808.4892664,0
+test_003,camera_01,1795375808.4892664,0
+test_003,sensor_01,1795375808.4892664,0
+test_003,sensor_01,1795375838.536049,1
