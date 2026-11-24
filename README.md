@@ -67,3 +67,10 @@ IoT_Botnet
         └── train_model.py
 
 ```
+
+## Install TShark
+```Install TShark
+sudo apt update && sudo apt install tshark -y
+```
+
+
